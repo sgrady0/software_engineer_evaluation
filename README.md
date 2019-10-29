@@ -1,103 +1,27 @@
-# Software Engineer Evaluation
+# Evaluation
 
-## Introduction
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.15.
 
-The purpose of this evaluation is to help us better understand your
-ability to follow a simple project plan and deliver a working Angular or React
-solution. Should you have any questions or concerns regarding the instructions
-that follow please reach out to us immediately for help or clarification.
+## Development server
 
-## Project
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-NASA provides a public API for searching images. The project you
-are building will query this API and display results in a SPA (single page web application). 
-You do not need an API key to use the service--simply follow the URL pattern below:
+## Code scaffolding
 
-`GET https://images-api.nasa.gov/search?media_type=image&q=Jupiter`
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-### Step 1: Create a Feature Branch
+## Build
 
-Clone this repo to your local machine and create a feature branch from the
-`master` branch by following the steps below (replace `<name>` with 
-your lowercased GitHub user name):
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-`git checkout master`
+## Running unit tests
 
-`git checkout -b <name>-evaluation`
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-`git push -u origin <name>-evaluation`
+## Running end-to-end tests
 
-## Step 2: Create a GitHub Pull Request and Assign Yourself
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-Once you have created this new project, make your first commit and push to the 
-remote feature branch from Step 1. Go to this repo on GitHub, open a new pull 
-request for this feature branch, and 
-[assign yourself](https://help.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users).
+## Further help
 
-## Step 3: Reference Images for Design
-
-Take a careful look at each screen in this project. Each screen includes a user story in the 
-"description" field (also listed below in this README). 
-
-The images should provide you with enough context around HTML layout, measurements,
-CSS, colors and images to complete this evaluation.
-
-## Step 4: Implement User Stories
-
-Please implement the following user stories and ensure that the acceptance
-criteria for each story is met by your implementation. User stories begin
-with "As a...", and acceptance criteria begin with "Given...".
-
-NOTE: when implementing the sign in page you do not need to actually
-authenticate against a real service. Please implement fake sign in 
-behavior that takes "someone@example.com" as the email address and 
-"password" as the password.
-
-```
-As a user
-I want to sign in to my account
-So that I can search for images
-
-  Given I am on the sign in screen
-  When I enter "someone@example.com", "password" and click "Sign In"
-  Then I should be routed to the blank search screen
-
-As a user
-I want to execute a search query
-So that I can search for images
-
-  Given I am on the blank search screen
-  When I enter "Jupiter" into the "NASA Image Search" input and click "Go"
-  Then I should see a single image search result
-
-As a user
-I want to click an image search result
-So that I can see the large format image from that search result in a modal dialog
-
-  Given I see a single image search result
-  When I click on the search result
-  Then I should see the large format image from that search result in a modal dialog
-
-As a user
-I want to click the close button on the large format image modal dialog
-So that I no longer see the modal dialog
-
-  Given I see a large format image modal dialog
-  When I click the close button on the modal dialog
-  Then the modal dialog should close
-  And I should see a single image search result
-```
-
-## Step 5: Request a Code Review
-
-When you have completed your implementation of the user stories
-push your final commit to your pull request feature branch and
-request a code review from PSP.
-
-## Questions?
-
-Please contact us immediately if you have any questions about this
-evaluation project, or encounter any issues getting set up. We are
-happy to help.
-
-Thanks!
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
