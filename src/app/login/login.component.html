@@ -1,1 +1,26 @@
-<p>login works!</p>
+<form [formGroup]="credentials" (ngSubmit)="submit()">
+  <fieldset [disabled]="isSubmitting">
+    <label>
+      Email Address
+      <input
+        #usernameControl
+        name="email"
+        formControlName="username"
+        type="email"
+        placeholder="Email Address">
+    </label>
+
+    <label>
+      Password
+      <input
+        name="password"
+        formControlName="password"
+        type="current-password"
+        placeholder="Password">
+    </label>
+
+    <button type="submit">
+      Sign In
+    </button>
+  </fieldset>
+</form>
