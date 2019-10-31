@@ -8,6 +8,8 @@ import { SearchResultItem } from '../../core/services/search/search-results.inte
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchResultComponent implements OnChanges {
+  readonly dateFormat = 'EEE, dd LLL yyyy HH:mm:ss ZZZZZ';
+
   @Input()
   item: SearchResultItem;
 

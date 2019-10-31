@@ -7,12 +7,17 @@
   >
 
   <figcaption>
-    <a href="#" (click)="enlarge($event)">
+    <a
+      (click)="enlarge($event)"
+      [routerLink]="[]"
+      [fragment]="itemDate"
+      queryParamsHandling="preserve"
+    >
       {{ itemTitle }}
     </a>
 
     <time [dateTime]="itemDate">
-      {{ itemDate | date:'EEE, dd LLL yyyy HH:mm:ss ZZZZZ' }}
+      {{ itemDate | date:dateFormat }}
     </time>
   </figcaption>
 </figure>
