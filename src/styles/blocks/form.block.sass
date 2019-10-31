@@ -1,0 +1,48 @@
+$border-radius: 3px
+
+$color__submit: #5b8edc
+$color__error: orangered
+
+.form
+
+  &__fieldset
+    border: none
+    margin: 0
+    padding: 0
+
+  &__label
+    display: block
+    font-size: 20px
+    font-weight: 500
+    margin-bottom: 25px
+    text-indent: 1px
+
+  &__input
+    border: 2px solid #ccc
+    border-radius: $border-radius
+    box-sizing: border-box
+    display: block
+    font-size: 20px
+    padding: 20px 10px
+    margin-top: 5px
+    width: 100%
+
+    &.ng-touched.ng-invalid
+      border-color: $color__error
+
+  &__submit
+    background: $color__submit
+    border: none
+    border-radius: $border-radius
+    color: #fff
+    cursor: pointer
+    display: block
+    font-size: 20px
+    font-weight: 500
+    padding: 20px
+    width: 100%
+
+    &:focus,
+    &:hover,
+    &:active
+      background: lighten($color__submit, 5%)
