@@ -1,1 +1,24 @@
-<p>search works!</p>
+<form [formGroup]="search" (ngSubmit)="submit()">
+  <fieldset [disabled]="isSubmitting">
+    <label>
+     NASA Image Search
+      <input
+        #queryControl
+        name="query"
+        formControlName="query"
+        type="search"
+      >
+    </label>
+
+    <button type="submit">
+      Go
+    </button>
+  </fieldset>
+</form>
+
+<app-search-count [searchResults]="searchResults$ | async"></app-search-count>
+
+<app-search-result
+  *ngFor="let item of (searchResults$ | async)?.items"
+  [item]="item"
+></app-search-result>

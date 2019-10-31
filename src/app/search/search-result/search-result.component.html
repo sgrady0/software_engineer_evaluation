@@ -1,0 +1,19 @@
+<figure>
+  <img
+    [src]="itemThumbnail"
+    [alt]="itemTitle"
+    [title]="itemTitle"
+  >
+
+  <figcaption>
+    <div>
+      {{ itemTitle }}
+    </div>
+
+    <time [dateTime]="itemDate">
+      {{ itemDate | date:'EEE, dd LLL yyyy HH:mm:ss ZZZZZ' }}
+    </time>
+  </figcaption>
+
+</figure>
+
