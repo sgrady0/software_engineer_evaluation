@@ -1,10 +1,11 @@
-<form [formGroup]="credentials" (ngSubmit)="submit()">
-  <fieldset [disabled]="isSubmitting">
-    <label>
+<form [formGroup]="credentials" (ngSubmit)="submit()" class="form">
+  <fieldset [disabled]="isSubmitting" class="form__fieldset">
+    <label class="form__label">
       Email Address
       <input
         #usernameControl
         name="email"
+        class="form__input"
         autocomplete="email"
         formControlName="username"
         type="email"
@@ -13,10 +14,11 @@
       >
     </label>
 
-    <label>
+    <label class="form__label">
       Password
       <input
         name="password"
+        class="form__input"
         autocomplete="current-password"
         formControlName="password"
         type="password"
@@ -25,7 +27,7 @@
       >
     </label>
 
-    <button type="submit">
+    <button type="submit" class="form__submit">
       Sign In
     </button>
   </fieldset>
