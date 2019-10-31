@@ -1,1 +1,9 @@
-<p>modal works!</p>
+<!-- TODO: Replace close "X" char with SVG -->
+<div (click)="close()" class="modal__overlay">
+  <div *ngIf="src" class="modal__content-container">
+    <div class="modal__close">X</div>
+    <figure class="modal__content">
+      <img class="modal__image" [src]="src" alt="">
+    </figure>
+  </div>
+</div>

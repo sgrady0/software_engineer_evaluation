@@ -21,4 +21,5 @@
 <app-search-result
   *ngFor="let item of (searchResults$ | async)?.items"
   [item]="item"
+  (viewEnlargement)="enlarge(item)"
 ></app-search-result>

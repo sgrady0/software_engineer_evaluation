@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.sass']
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent {
+  @Input()
+  src: SafeUrl;
 
-  constructor() { }
+  @Output()
+  closeModal = new EventEmitter<void>();
 
-  ngOnInit() {
+  close(): void {
+    this.closeModal.emit();
   }
-
 }

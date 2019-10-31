@@ -5,8 +5,9 @@ import { untilDestroyed } from 'ngx-take-until-destroy';
 import { Subject } from 'rxjs';
 import { distinctUntilKeyChanged, map, shareReplay, tap } from 'rxjs/operators';
 
-import { SearchResultsCollection } from '../core/services/search/search-results.interface';
+import { SearchResultItem, SearchResultsCollection } from '../core/services/search/search-results.interface';
 import { SearchService } from '../core/services/search/search.service';
+import { ModalService } from '../shared/modules/modal/modal.service';
 
 @Component({
   selector: 'app-search',
@@ -38,7 +39,8 @@ export class SearchComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private searchService: SearchService
+    private searchService: SearchService,
+    private modal: ModalService
   ) {}
 
   ngOnInit(): void {
@@ -70,6 +72,13 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.router.navigate([], {
       relativeTo: this.activatedRoute,
       queryParams: search.value
+    });
+  }
+
+  enlarge(item: SearchResultItem): void {
+    this.modal.openOverlay();
+    this.searchService.imageCollection(item).subscribe({
+      next: images => this.modal.populate(images.large)
     });
   }
 

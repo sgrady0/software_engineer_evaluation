@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { SearchResultItem } from '../../core/services/search/search-results.interface';
 
 @Component({
@@ -10,6 +10,9 @@ import { SearchResultItem } from '../../core/services/search/search-results.inte
 export class SearchResultComponent implements OnChanges {
   @Input()
   item: SearchResultItem;
+
+  @Output()
+  viewEnlargement = new EventEmitter<void>();
 
   itemThumbnail?: string;
   itemTitle?: string;
@@ -23,5 +26,10 @@ export class SearchResultComponent implements OnChanges {
       this.itemTitle = item.data['0'].title;
       this.itemDate = item.data['0'].date_created;
     }
+  }
+
+  enlarge(e?: MouseEvent): void {
+    if (e) { e.preventDefault(); }
+    this.viewEnlargement.emit();
   }
 }

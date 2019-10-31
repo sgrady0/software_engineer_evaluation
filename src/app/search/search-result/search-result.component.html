@@ -1,14 +1,15 @@
 <figure>
   <img
+    (click)="enlarge()"
     [src]="itemThumbnail"
     [alt]="itemTitle"
     [title]="itemTitle"
   >
 
   <figcaption>
-    <div>
+    <a href="#" (click)="enlarge($event)">
       {{ itemTitle }}
-    </div>
+    </a>
 
     <time [dateTime]="itemDate">
       {{ itemDate | date:'EEE, dd LLL yyyy HH:mm:ss ZZZZZ' }}
