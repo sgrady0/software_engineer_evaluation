@@ -1,7 +1,22 @@
 <!-- TODO: Replace close "X" char with SVG -->
 <div (click)="close()" class="modal__overlay">
   <div *ngIf="src" class="modal__content-container">
-    <div class="modal__close">X</div>
+    <div class="modal__close">
+      <svg
+        width="24"
+        height="24"
+        xmlns="http://www.w3.org/2000/svg"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        fill="currentColor"
+      >
+        <path
+          stroke="currentColor"
+          stroke-width="2px"
+          d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"
+        ></path>
+      </svg>
+    </div>
     <figure class="modal__content">
       <img class="modal__image" [src]="src" alt="">
     </figure>
