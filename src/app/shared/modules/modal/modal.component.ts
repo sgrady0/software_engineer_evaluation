@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { SafeUrl } from '@angular/platform-browser';
 
 @Component({
@@ -12,6 +12,13 @@ export class ModalComponent {
 
   @Output()
   closeModal = new EventEmitter<void>();
+
+  @HostListener('body:keydown', ['$event'])
+  onEsc(event: KeyboardEvent) {
+    if (event.key !== 'Escape') { return; }
+    event.preventDefault();
+    this.close();
+  }
 
   close(): void {
     this.closeModal.emit();
